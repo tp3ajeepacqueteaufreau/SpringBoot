@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/Javascript">
+        $(document).ready(function() {
+            $("#replaceContent").click(function() {
+                var pays = $("#pays").val();
+                $.getJSON("/country/" + pays, function (data) {
+                    console.log(data);
+                    $("#yellowjacket").html("<p>Manifestant en " + data.country + ": " + data.numberYellowJacket + "</p>");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="quote">
+    <hr>
+    <div id="yellowjacket">Manifestants = </div>
+    <hr/>
+</div>
+<input type="text" id="pays" value="France">
+<input type="submit" id="replaceContent" value="Refresh local"></input>
+</body>
+</html>

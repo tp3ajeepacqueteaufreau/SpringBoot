@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Controller {
-    
+public class YellowJacketRestController {
     private final
     YellowJacketService service;
     
     @Autowired
-    public Controller(YellowJacketService service) {
+    public YellowJacketRestController(YellowJacketService service) {
         this.service = service;
     }
     
