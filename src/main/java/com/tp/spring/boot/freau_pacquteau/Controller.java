@@ -17,8 +17,8 @@ public class Controller {
     }
     
     @GetMapping("/country/{pays}")
-    public String getByPays(@PathVariable("pays") String pays)
+    public YellowJacket getByPays(@PathVariable("pays") String pays)
     {
-        return "Pays: " + pays + " Nombre: " + service.getNumberYellowJacket(pays);
+        return new YellowJacket(pays, service.getNumberYellowJacket(pays));
     }
 }
